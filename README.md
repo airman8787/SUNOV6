@@ -51,6 +51,6 @@ Suno v6系モデルの使い分け、プロンプト、設定、編集機能、�
 
 ---
 
-**原資料：** [Googleドキュメント](https://docs.google.com/document/d/1g15qHAnNYs4h5Hj8TYv0eVTUwnJa6PwR5lnerSMne1c/edit?usp=drivesdk)  
+**原資料：** 非公開の調査文書  
 **言語：** 日本語  
 **注記：** Suno公式とは無関係の非公式ガイドです。
