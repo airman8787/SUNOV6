@@ -1,8 +1,8 @@
 # Suno v6 / v6-wild / v6-mini 活用ガイド
 
-**2026年10月版** · [概要に戻る](../README.md)
+**2026年10月版（2026年11月改訂）** · [概要に戻る](../README.md)
 
-原文：[Googleドキュメント](https://docs.google.com/document/d/1zbmTP5u-6xAdceDD5ZejNhnpkyElablYXuHyyzVFj-s/edit?usp=drivesdk)
+原文：[Googleドキュメント](https://docs.google.com/document/d/1g15qHAnNYs4h5Hj8TYv0eVTUwnJa6PwR5lnerSMne1c/edit?usp=drivesdk)（原本更新：2026年11月7日）
 
 > 本文は原資料を整理して掲載したものです。公式仕様、二次情報、個人の検証・推奨設定が混在します。現在の仕様や数値を独立に再検証したものではありません。
 
@@ -20,9 +20,9 @@
 
 - Sunoは2026年9月9日、CEOのMikey Shulman名義のブログ「Introducing v6」でV6ファミリーを発表しました。Warner Music Group、BMG、Believeと共同で開発した「新世代」モデルとされています。
 - 公式による各モデルの位置づけは次のとおりです。
-- v6：「reliable, precise and consistently delivers polished music across every genre and style. When you know what you want, v6 helps you get there.」（Pro/Premier向け）
-- v6-wild：「less predictable and more varied, producing unexpected, textured and ambitious results. It gives you new ideas to riff on, build from or bring back into v6 for further refinement.」（Pro/Premier向け）
-- v6-mini：「a faster, more efficient version available to everyone」（全プラン）
+  - **v6**：「reliable, precise and consistently delivers polished music across every genre and style. When you know what you want, v6 helps you get there.」（Pro/Premier向け）
+  - **v6-wild**：「less predictable and more varied, producing unexpected, textured and ambitious results. It gives you new ideas to riff on, build from or bring back into v6 for further refinement.」（Pro/Premier向け）
+  - **v6-mini**：「a faster, more efficient version available to everyone」（全プラン）
 - ヘルプセンターの「What's new in v6?」には、3モデルとも1回の生成で最大8分まで作れること、Remix & Edit（Extend、Cover、Replace Section など）、Custom Models、Suno SoundsがすべてV6で動いていることが書かれています。
 - v6 FAQ によると、V6以前のモデルはすべて廃止されました。過去の曲はライブラリに残り、再生・共有・リマスター・カバーはできますが、新しく作るものはすべてV6系で生成されます。既存のCustom Modelも自動的にV6ベースへ更新されます。
 - クレジット消費は従来と同じで、1回の生成で2曲、合計10クレジットです。ただし画像や動画を多く入力した場合とMax Modeを使った場合は消費が増えます。
@@ -47,22 +47,24 @@
 
 | モデル | 向いている用途 | 推奨設定（出発点） | 主なリスク |
 |---|---|---|---|
-| V6 ／ 構成・歌詞・ボーカル像が決まった曲の仕上げ、カバーの安定化 ／ Variety 0／Style Influence 70〜80%／Weirdness 15〜25%／2分を超える曲はMax Mode ON ／ 整っているが平板、ボーカルのグルーヴが弱い |
-| V6-WILD ／ リフ探し、イントロ違い、質感の探索、ジャンル混合 ／ Weirdnessは低めから始めて1つずつ上げる／Max Mode ON推奨（ytyng.comの主観評価） ／ Roo's Newsletterによると、初期の実機テストで「roughly half of v6-wild generations coming back unusable」（生成の約半分が使えない）との報告あり（同誌は「one tester's sample rather than a benchmark」＝一人の検証例であり、ベンチマークではないと注記）。後半の崩れ、ボーカルのにじみ |
-| V6-MINI ／ メロディや全体構成の高速な下書き、歌詞の試し打ち、無料での探索 ／ プロンプトは短く単純に ／ デモ品質で、仕上げには向かない |
-デモ品質で、仕上げには向かない
+| **V6** | 構成・歌詞・ボーカル像が決まった曲の仕上げ、カバーの安定化 | Variety 0／Style Influence 70〜80%／Weirdness 15〜25%／2分を超える曲はMax Mode ON | 整っているが平板、ボーカルのグルーヴが弱い |
+| **V6-WILD** | リフ探し、イントロ違い、質感の探索、ジャンル混合 | Weirdnessは低めから始めて1つずつ上げる／Max Mode ON推奨（ytyng.comの主観評価） | Roo's Newsletterによると、初期の実機テストで「roughly half of v6-wild generations coming back unusable」（生成の約半分が使えない）との報告あり（同誌は「one tester's sample rather than a benchmark」＝一人の検証例であり、ベンチマークではないと注記）。後半の崩れ、ボーカルのにじみ |
+| **V6-MINI** | メロディや全体構成の高速な下書き、歌詞の試し打ち、無料での探索 | プロンプトは短く単純に | デモ品質で、仕上げには向かない |
+
 - 公式の推奨フローも「WILDで出したアイデアをV6に持ち帰って仕上げる」形です。
 - Grammy投票権を持つエンジニアのSamori Colesは、V5.5と3つのV6モデルを同じ条件で比較しました。評価は次のとおりです（aimusicpreneur経由）。
-- V6は音（暖かさ・広がり・低域）でV5.5に勝つが、ボーカルのグルーヴでは負ける
-- WILDは曲によって当たり外れが大きい
-- MINIは下書き用
-- Max Modeはカバーを原曲に近づける効果があり、2分を超える曲なら倍のクレジットを払う価値がある
-- 一語差し替え機能が最も実用的
+  - V6は音（暖かさ・広がり・低域）でV5.5に勝つが、ボーカルのグルーヴでは負ける
+  - WILDは曲によって当たり外れが大きい
+  - MINIは下書き用
+  - Max Modeはカバーを原曲に近づける効果があり、2分を超える曲なら倍のクレジットを払う価値がある
+  - 一語差し替え機能が最も実用的
 
-### B. Redditで共有されている実践的なコツ
+### B. Redditで共有されている実践的なコツ（r/SunoAI）
 
 > ※ Redditのページを直接開くことはできなかったため、引用はAIReiterとUndetectrによる二次引用です（スレッドURLは確認済み）。
-**1. MINIで作った曲をV6でカバー/リマスターして安定させる**
+
+#### 1. MINIで作った曲をV6でカバー/リマスターして安定させる
+
 - u/New_Lettuce_8778：「You can also take the v6 mini versions and cover them in v6 Pro or Wild, and it really does a good job of stabilizing the sound」
 - u/Ok-Acanthaceae-5243：V6のボーカルが「child's karaoke toy」のように聞こえる問題はMINIでは起きず、V6でリマスターすると改善したと報告しています。
 
@@ -98,7 +100,7 @@
 
 - 不完全さや生っぽさが欲しいときは、そのことをはっきり書き、楽器構成・録音の質感・演奏の様子を描写するよう勧めています（Undetectr経由）。
 
-### C. プロンプトと歌詞タグの書き方
+### C. プロンプトと歌詞タグの書き方（V6向け）
 
 - スタイル欄は文章で書く：Roo's Newsletterは、V6ではタグの羅列よりも「ジャンル→BPM→グルーヴ→各楽器が何をしているか→ボーカルの声質と歌い方→曲の流れ（感情の起伏）→ミックスの質感」を2〜3文で書くほうが良いとしています。V5.5の頃の「タグは5〜8個がベスト」という助言は撤回されています。
 - 入れたくない要素はExclude Styles欄へ：スタイル欄に「no autotune」と書いても効きません。Exclude欄に短い語句で入れます。
@@ -116,7 +118,7 @@
 - Persona／Voices：2025年12月以降、Create画面のPersonasボタンはVoicesに置き換えられ、Style PersonasはVoicesメニューの中に残っています（公式Voices FAQ）。ただし公式Voices FAQは2026年3月版のままで、まだ「v5.5を選択」と書かれています。V6でのVoices/Personaの挙動を説明した公式記事は確認できませんでした。Jack Righteousは、V6でExtendするとPersonaが次のセクションににじむ（声が切り替わらない）という報告を紹介しています。対策は、ボーカルの切れ目（楽器だけの区間）で区切ってから延長することです。
 - Custom Models：自動的にV6ベースへ更新されます。声や音色の一貫性を保ちたい場合の有力な選択肢です。
 
-### E. よくある失敗と対策
+### E. よくある失敗と対策（早見表）
 
 | 症状 | 主な原因 | 対策 |
 |---|---|---|
@@ -127,7 +129,11 @@
 | WILDが雑音っぽい | Weirdness・Varietyと実験的なモデル特性が重なっている | Weirdnessから先に下げる。用途を短いインストやリフ探しに限定する |
 | 叫び声や過剰な表現が止まらない | 指示が多すぎる | 禁止事項を足さず、プロンプトの単語を減らす |
 | 昔のプロンプトが平板に聞こえる | V5向けの「タグの羅列」形式 | 楽器の役割を書いた文章形式に書き直す |
-楽器の役割を書いた文章形式に書き直す
+
+### F. MIDIで旋律を固定してv6-wildに渡す（2026年11月7日追記）
+
+- 【公式】2026年11月4日から、CreateにMIDIファイル（.mid／.midi）を入れ、その使い方を自然言語で指示できるようになりました。対象はPro・Premierで、開始時点で使えるのはSimple Createとv6-wildのみです（Suno Blog「[MIDI in Create](https://suno.com/blog/MIDI-in-create)」）。
+- 【運用案】WILDの「当たり外れが大きい」性質（[A表](#a-モデル別の使い方)）は、旋律とコードをMIDIで固定することで抑えられる可能性があります。WILDで質感と編曲を探り、良いものをV6でCover／Remasterして仕上げる流れです。**効果は未検証です。**
 
 ## 注意事項・未検証情報
 
@@ -136,6 +142,7 @@
 - 評価が割れている：V6の評価ははっきり分かれています。MusicRadar（2026年9月17日）は、Reddit上の「muffled, generic, soulless garbage」や解約宣言を報じました。一方で、aimusicpreneurによるとGrammy投票権を持つエンジニアのSamori Colesは「v6 the better sounding record and the weaker vocal performance」（同じプロンプトで比べると、音としてはV6が上だがボーカルの表現は弱い）と評価しており、逆にGearnewsのMarcus Schmahl（2026年9月22日）は自身の検証でV6のボーカルが「sound flatter now… less depth, less body, less overall dynamics」になったと述べています。訓練データの縮小が原因だという説はユーザーの推測にとどまり、Suno自身はMusic Business Worldwide（2026年9月22日、Variety経由）に対し、V6は「content licensed from our partners, interactions including creations and preference signals from our community, and the accumulated learnings from our team」で訓練したと説明しています。
 - 訴訟リスク：SonyとUMGは2026年9月18日、マサチューセッツ連邦地裁に45ページの訴状を提出しました（Variety報道）。V6を「fruit of the same poisoned tree」と呼び、「training a 'new' model on the outputs of an infringing model does not eliminate the infringement; it launders it」と主張しています。LawCommentaryによると、訴状は特定済みの60,202件の録音がコピーされたとも主張しています。商用リリースの前に、規約やライセンスの最新状況を確認してください。
 - 未確認事項：V6でのVoices/Personaの公式仕様、日本語の発音改善の程度は、今回の調査では確認できませんでした。
+- ダウンロード上限と商用利用（2026年10月28日追記）：2026年9月3日から、ダウンロードに上限があります（Free：9月3日より前に登録した無料ユーザーに最大7回の試用、Pro：月20回、Premier：月60回）。Pro・Premierの枠は毎月の請求日に更新され、繰り越せません。超過分は追加購入できます（価格は公式ページで未確認）。商用利用の権利は、有料プランでSunoの正規の方法でダウンロードした曲に付きます。生成回数が増えやすいWILDの試行は、ライブラリで聴き比べ、採用する曲だけをダウンロードすると枠を節約できます（運用案）。出典：Suno Blog「[An update to our downloads policy and Terms of Service](https://suno.com/blog/suno-updates-tos)」／[Suno Help](https://help.suno.com/en/articles/13926209)
 
 ## 参考資料・出典
 
@@ -152,3 +159,11 @@
 - MusicRadar <https://www.musicradar.com/music-tech/im-cancelling-my-subscription-suno-users-slam-its-v6-update-as-muffled-generic-soulless-garbage>
 - Jack Righteous <https://jackrighteous.com/en-us/blogs/guides-using-suno-ai-music-creation/suno-v6-voice-persona-drift-extend-bleeding-sections-fix>
 - HookGenius <https://hookgenius.app/learn/suno-song-structure-tips/>
+- Suno Blog（MIDI in Create） <https://suno.com/blog/MIDI-in-create>
+- Suno Blog（An update to our downloads policy and Terms of Service） <https://suno.com/blog/suno-updates-tos>
+- Suno ヘルプ（ダウンロード上限） <https://help.suno.com/en/articles/13926209>
+
+## 改訂履歴
+
+- 2026年11月：原資料の改訂に合わせて更新。F節（MIDI入力）とダウンロード上限・商用利用の注意を追加。原本リンクを差し替え、表の崩れを修正。
+- 2026年10月：初版。
